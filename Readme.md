@@ -8,10 +8,7 @@ A Telegram bot designed to interact with users, handle images, and provide vario
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Usage](#usage)
-- [Commands](#commands)
-- [Code Structure](#code-structure)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 
