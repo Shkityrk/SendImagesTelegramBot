@@ -57,7 +57,11 @@ async def send_images_task(chat_id, search_prompt ):
     user_id = chat_id # откуда взять id юзера?? - будем считать что id юзера равно id чата)) так что для бесед не сгодится(
     # вообще, сделать при старте бота геттер user_id на основе chat_id, надеюсь, я когда нибудь сделаю так
 
-    sleep_time = int(await storage.redis.get(f'sleep_time:{user_id}'))
+    try:
+        sleep_time = int(await storage.redis.get(f'sleep_time:{user_id}'))
+    except Exception as e:
+        sleep_time = 10
+        logger.info(f'User not set sleep_time, so sleep_time=10')
 
     for image_url in image_urls:
         try:
