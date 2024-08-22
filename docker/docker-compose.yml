@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  bot:
+    build:
+      context: ..  # Указывает на родительскую папку /project-root
+      dockerfile: docker/Dockerfile  # Путь к Dockerfile относительно контекста сборки
+    container_name: aiogram_bot
+    restart: always
+    env_file:
+      - ../.env/.env
+    volumes:
+      - ..:/app  # Монтируем родительскую папку в контейнер
+    ports:
+      - "8000:8000"  # Если нужно открыть порт
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:latest
+    container_name: aioredis
+    ports:
+      - "6380:6379"  # Маппинг порта 6380 на стандартный порт 6379 внутри контейнера
