@@ -23,8 +23,8 @@ To install and run the bot locally, follow these steps:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/cats-telegram-bot.git
-cd cats-telegram-bot
+git clone https://github.com/Shkityrk/SendImagesTelegramBot
+cd SendImagesTelegramBot
 ```
 
 ### Configure the Environment
